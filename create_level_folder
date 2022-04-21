@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo -n "Enter the level number: "
+read level_nb
+
+mkdir -p level$level_nb/Ressources
+touch    level$level_nb/flag
+touch	 level$level_nb/Ressources/writeup.txt

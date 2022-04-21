@@ -1,0 +1,3 @@
+- At the inspection of /etc/passwd he found this DES Cipher "42hDRfypTqqnw"
+
+- John was able to crack it the plain text is "abcdefg", it is the password to flag01
