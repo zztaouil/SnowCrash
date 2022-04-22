@@ -1,0 +1,18 @@
+- Running file Command on level03 file gives "setuid setgid ELF 32-bit LSB executable"
+
+- The mode s on User is set, meaning to set user id on execution,
+and owner of the file is flag03
+
+- The executable is running as flag03 we can exploit that somehow
+
+- The executable prints Exploit Me 
+
+- Let's print the sequences of pritable characters in files with strings
+
+- We found this string "/usr/bin/env echo Exploit me" the program prints Exploit Me
+with echo
+
+- The echo call is done with relative path this means we can create our echo
+and inject it's path into PATH enviroment variable
+
+- This way we can execute getflag as flag03 using SUID mode

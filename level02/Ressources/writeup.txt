@@ -1,1 +1,22 @@
-- There is pcap file in the home dir
+- There is pcap file in the home dir, pcap short for packet capture
+
+- The file can be opened with different tools one of them is wireshark
+
+- It contains TCP packets let's check the TCP payload
+
+- The following is payload in hexadecimal
+
+"00 0d 0a 50 61 73 73 77 6f 72 64 3a 20 66 74 5f 77 61
+6e 64 72 7f 7f 7f 4e 44 52 65 6c 7f 4c 30 4c 0d 00 0d 0a 01"
+
+- The output of the python script is the following:
+
+"?(00)?(0d)?(0a)Password:?(20)ft_wandr?(7f)?(7f)?(7f)NDRel?(7f)L0L?(0d)?(00)?(0d)?(0a)?(01)"
+where this syntax ?(0x) indicates a non printable character
+
+- The password "ft_wandrNDRelL0L" doesn't work, there is more
+
+- 7f is ascii character DEL, after deleting every character that comes before DEL we'll have
+"ft_waNDReL0L"
+
+- It's the password to flag02
