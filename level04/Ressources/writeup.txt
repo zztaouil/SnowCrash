@@ -1,0 +1,16 @@
+- level04.pl is a perl cgi script taking one query parameter named x.
+
+     1  #!/usr/bin/perl
+     2  # localhost:4747
+     3  use CGI qw{param};
+     4  print "Content-type: text/html\n\n";
+     5  sub x {
+     6    $y = $_[0];
+     7    print `echo $y 2>&1`;
+     8  }
+     9  x(param("x"));
+
+
+- It does print x in line 7, in order to print the output of getflag
+we will substitute it the same way as echo. x=`getflag` which gives us the flag
+ 
