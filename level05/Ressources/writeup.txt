@@ -1,0 +1,7 @@
+- When logged in to level05 we get the following message 'You have new mail.'
+
+- I searched by the keyword of 'mail' i found this file /var/mail/level05 containing crontab executing /usr/sbin/openarenaserver every 2 minutes with flag05 as the owner, what the script does is execute with bash everything inside /opt/openarenaserver.
+
+- While looking up /opt/openarenaserver it is empty, let's create a bash script calling getflag and redirecting the output to /tmp/flag05
+
+- After two minutes /tmp/flag05 contains the flag
