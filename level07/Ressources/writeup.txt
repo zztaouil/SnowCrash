@@ -1,0 +1,10 @@
+- home folder contains level07 binary
+
+- when executing it prints level07 after disassembling main the program calls getenv then asprintf then system
+
+- the program prints the env variable LOGNAME with system because asprintf allocate the size of the second argument and it writes it into the first argument
+we are left with system priting LOGNAME with echo
+
+- we will inject code in LOGNAME env var, export LOGNAME="test; getflag"
+
+we got our flag
