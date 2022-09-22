@@ -1,0 +1,10 @@
+
+- home folder of user level09 contains to files level09 binary and token writen in it 'f4kmm6p|=�p�n��DB�Du{��'
+
+- the binary takes an argument and writes back a string with the same length as the argument
+
+- it is a substituion cipher
+[ e(x) = x + index_of(x) ]
+[ d(y) = y - index_of(y) ]
+
+- the code in program.c decrypts cipher giving the following flag 's5cAJpM8ev6XHw998pRWG728z'
