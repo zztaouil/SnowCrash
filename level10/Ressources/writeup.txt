@@ -1,0 +1,5 @@
+
+- level10's home contains level10 binary and a token file
+
+- the binary read from the file argv[1] and send it to the host argv[2]:6969
+
