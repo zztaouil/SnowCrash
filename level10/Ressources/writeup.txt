@@ -3,3 +3,14 @@
 
 - the binary read from the file argv[1] and send it to the host argv[2]:6969
 
+- the binary calls access to verify if the calling process have read access to the file
+after that comes the call to open
+
+- we will perform a race condition attack, basically when access is called we need to argv[1]
+to be a file we read access to then when open is called argv[1] should be token.
+We can achieve this by switching between a symbolic link /tmp/token pointing to token
+and /tmp/file. Hopefully the timing will be right and /tmp/file will be passed to access and
+/tmp/token will be passed to token.
+
+- We'll use rename system call to race
+

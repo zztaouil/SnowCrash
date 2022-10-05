@@ -1,1 +1,4 @@
 - Home is not empty
+
+- Binary symlink ope
+
