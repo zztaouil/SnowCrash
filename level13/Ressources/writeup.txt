@@ -1,0 +1,6 @@
+
+- level13 home is not empty, it contains a binary suid bit is set and owner is flag13
+
+- after executing the following prints in stdout 'UID 2013 started us but we we expect 4242'
+
+

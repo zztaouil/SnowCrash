@@ -1,0 +1,14 @@
+
+- we find level12.pl cgi script set-userid bit set, serving in route
+/ of box_ip:4646
+
+- cgi takes two query parameters x and y, x is the interesting one
+because the cgi executes the egrep utility matching the value of 
+uppercase x and whitespaces skipped
+
+- let's create an executable script /tmp/SCRIPT that executes getflag
+and redirects stdout to /tmp/flag
+
+- in order to not uppercase tmp we send a wild card
+
+- the payload will be `/*/SCRIPT`
