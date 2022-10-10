@@ -1,7 +1,7 @@
 - Find all files owned by flag00: "find / -user flag00 2> /dev/null"
 
-- He found this cipher "cdiiddwpgswtgt" in /usr/sbin/john it looks like a Caesar cipher
+- I found this cipher "cdiiddwpgswtgt" in /usr/sbin/john it looks like a Caesar cipher
 
-- He tried every possible key [0,25] to decipher, with the help of caesar.py
+- I tried every possible key [0,25] to decipher (decipher(y) = y - key), with the help of caesar.py
 
 - "nottoohardhere" was the most coherent, it's the password of flag00

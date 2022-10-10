@@ -13,4 +13,3 @@
 
 - It does print x in line 7, in order to print the output of getflag
 we will substitute it the same way as echo. x=`getflag` which gives us the flag
- 

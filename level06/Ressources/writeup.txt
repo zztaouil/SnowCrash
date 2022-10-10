@@ -10,4 +10,3 @@ the /e modifer allows to use PHP code within your regex, it will be evaluated as
 
 - After executing ./level06 /tmp/file1
 -> PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
-
