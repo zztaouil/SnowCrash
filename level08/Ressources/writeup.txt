@@ -1,4 +1,22 @@
-- Home is not empty
 
-- Binary symlink ope
+- Home is not empty running the binary with argv[1] = token prints
+"You may not access 'token'" and exists with 1
 
+- Looking at the disassembled binary if <strstr@plt> return is non null
+it prints the error message above
+
+0x080485cc <+120>:   mov    $0x8048799,%eax
+0x080485d1 <+125>:   mov    %edx,0x4(%esp)
+0x080485d5 <+129>:   mov    %eax,(%esp)
+0x080485d8 <+132>:   call   0x8048420 <printf@plt>
+0x080485dd <+137>:   movl   $0x1,(%esp)
+0x080485e4 <+144>:   call   0x8048460 <exit@plt>
+
+(gdb) x/s 0x8048799
+0x8048799:       "You may not access '%s'\n"
+
+- Let's create a symbolic link named anything other than 'token'
+ln -sf /home/user/level08/token /tmp/sym
+
+level08@SnowCrash:~$ ./level08 /tmp/sym
+quif5eloekouj29ke0vouxean
