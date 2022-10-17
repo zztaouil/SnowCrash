@@ -3,4 +3,20 @@
 
 - after executing the following prints in stdout 'UID 2013 started us but we we expect 4242'
 
+- Opening the binary with gdb making a breakpoint directly after <getuid@plt> call
 
+   0x08048595 <+9>:     call   0x8048380 <getuid@plt>
+=> 0x0804859a <+14>:    cmp    $0x1092,%eax
+   0x0804859f <+19>:    je     0x80485cb <main+63>
+   0x080485a1 <+21>:    call   0x8048380 <getuid@plt>
+   0x080485a6 <+26>:    mov    $0x80486c8,%edx
+   0x080485ab <+31>:    movl   $0x1092,0x8(%esp)
+
+- %eax register holds the return of getuid call, we can write 4242 into %eax and continue 
+the execution of the program.
+
+(gdb) c
+Continuing.
+your token is 2A31L79asukciNyi8uppkEuSx
+[Inferior 1 (process 2149) exited with code 050]
+(gdb) 
